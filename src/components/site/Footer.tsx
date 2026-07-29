@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MessageCircle, Mail } from "lucide-react";
-import logoAsset from "@/assets/vitrio-logo.asset.json";
-const logo = logoAsset.url;
+import logo from "@/assets/logo-vitrio.jpeg";
 import { categories, waLink, INSTAGRAM_URL } from "@/lib/products";
 
 export function Footer() {
@@ -16,9 +15,8 @@ export function Footer() {
                 VITR<span className="text-primary">IO</span>
               </span>
             </div>
-            <p className="mt-4 text-sm text-muted-foreground text-balance">
-              Os melhores achados da internet. Produtos selecionados com carinho, ofertas
-              reais e preços que valem a pena.
+            <p className="mt-4 text-xs leading-5 text-muted-foreground text-balance">
+              Os melhores achados da internet.
             </p>
           </div>
 
@@ -74,10 +72,10 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:contato@vitrio.com.br"
+                  href="mailto:vitrioofc@gmail.com"
                   className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
                 >
-                  <Mail className="h-4 w-4" /> contato@vitrio.com.br
+                  <Mail className="h-4 w-4" /> vitrioofc@gmail.com
                 </a>
               </li>
             </ul>
@@ -89,7 +87,7 @@ export function Footer() {
             © {new Date().getFullYear()} Vitrio. Todos os direitos reservados.
           </p>
           <p className="text-xs text-muted-foreground">
-            Os preços podem sofrer alteração. Alguns links são de afiliado.
+            Os preços podem sofrer alterações devido a variações de estoque, cupons ou promoções temporárias.
           </p>
         </div>
       </div>

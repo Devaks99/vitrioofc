@@ -38,13 +38,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Vitrio é a sua vitrine dos melhores achados da internet. Produtos selecionados, ofertas reais e preços que valem a pena, direto para a Shopee.",
+          "Vitrio é a sua vitrine dos melhores achados da internet. Os produtos com os melhores custos benefícios do mercado em um só lugar!",
       },
       { property: "og:title", content: "Vitrio — Os melhores achados da internet" },
       {
         property: "og:description",
         content:
-          "Produtos selecionados com carinho, ofertas reais e preços que valem a pena.",
+          "Os produtos com os melhores custos benefícios do mercado em um só lugar!",
       },
     ],
   }),
@@ -54,6 +54,12 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   const featured = getFeatured();
   const hot = getHotDeals().slice(0, 4);
+  const benefits = [
+    { icon: ShoppingBag, t: "Tudo organizado", d: "Achados separados para você encontrar mais rápido." },
+    { icon: ShieldCheck, t: "Informações essenciais", d: "Preço, desconto e avaliação em destaque." },
+    { icon: Tag, t: "Menos tempo buscando", d: "Opções selecionadas em diferentes categorias." },
+    { icon: Truck, t: "Acesso direto à compra", d: "Do anúncio para o link na Shopee." },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -78,8 +84,8 @@ function HomePage() {
               <br /> da internet.
             </h1>
             <p className="mt-5 max-w-lg text-balance text-base text-muted-foreground sm:text-lg">
-              Produtos selecionados com carinho, ofertas reais e preços que valem
-              a pena. Direto no seu WhatsApp e no seu carrinho da Shopee.
+              Produtos com os melhores custos benefícios do mercado em um só lugar!
+              Encontre ofertas exclusivas, selecionadas e prontas para você.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
@@ -100,7 +106,7 @@ function HomePage() {
 
             <dl className="mt-10 grid max-w-md grid-cols-3 gap-4">
               {[
-                { k: "500+", v: "Achados" },
+                { k: "100+", v: "Achados" },
                 { k: "70%", v: "Off médio" },
                 { k: "4.8★", v: "Nota geral" },
               ].map((s) => (
@@ -143,23 +149,34 @@ function HomePage() {
 
       {/* BENEFITS */}
       <section className="border-y border-border bg-secondary/40">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-10 sm:px-6 md:grid-cols-4 lg:px-8">
-          {[
-            { icon: ShoppingBag, t: "Produtos selecionados", d: "Curadoria diária" },
-            { icon: ShieldCheck, t: "Confiança & qualidade", d: "Vendedores testados" },
-            { icon: Tag, t: "Preços que valem", d: "Ofertas reais" },
-            { icon: Truck, t: "Frete Shopee", d: "Direto na sua casa" },
-          ].map((b) => (
-            <div key={b.t} className="flex items-center gap-3">
-              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
-                <b.icon className="h-5 w-5" />
-              </div>
-              <div className="min-w-0">
-                <p className="text-sm font-semibold">{b.t}</p>
-                <p className="text-xs text-muted-foreground">{b.d}</p>
-              </div>
+        <style>{`
+          @keyframes scrollBenefits {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+        `}</style>
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="overflow-hidden">
+            <div
+              className="flex w-max items-center gap-4"
+              style={{ animation: "scrollBenefits 18s linear infinite" }}
+            >
+              {[...benefits, ...benefits].map((b, index) => (
+                <div
+                  key={`${b.t}-${index}`}
+                  className="flex min-w-[240px] max-w-[260px] items-center gap-3 rounded-2xl border border-border/70 bg-background/80 px-4 py-4 shadow-sm sm:min-w-[280px]"
+                >
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+                    <b.icon className="h-5 w-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold">{b.t}</p>
+                    <p className="text-xs text-muted-foreground">{b.d}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
@@ -193,12 +210,12 @@ function HomePage() {
       </section>
 
       {/* FEATURED */}
-      <section className="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
+      <section id="achados-do-momento" className="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between gap-4">
           <SectionHead
             eyebrow="Destaques"
             title="Achados do momento"
-            desc="Os produtos que estão bombando na vitrine."
+            desc="Os produtos com melhores custos benefícios do momento."
           />
           <Link
             to="/produtos"
@@ -233,8 +250,7 @@ function HomePage() {
                 Economize com <span className="text-primary">inteligência.</span>
               </h3>
               <p className="mt-3 max-w-md text-white/70">
-                Nós pesquisamos, você economiza. Descontos reais em produtos que
-                a gente usaria também.
+                Pesquisamos os melhores preços e selecionamos ofertas que realmente fazem sentido para o seu dia a dia.
               </p>
               <Link
                 to="/ofertas"

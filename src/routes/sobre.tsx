@@ -11,8 +11,7 @@ import {
   Instagram,
 } from "lucide-react";
 import { INSTAGRAM_URL, waLink } from "@/lib/products";
-import logoAsset from "@/assets/vitrio-logo.asset.json";
-const logo = logoAsset.url;
+import logo from "@/assets/logo-vitrio.jpeg";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
@@ -51,9 +50,8 @@ function AboutPage() {
             A vitrine dos melhores <span className="text-primary">achados.</span>
           </h1>
           <p className="mt-4 max-w-2xl text-balance text-muted-foreground sm:text-lg">
-            A Vitrio nasceu para tornar mais simples encontrar produtos bons,
-            bonitos e com preço justo. Testamos, comparamos e selecionamos —
-            você só aproveita.
+            A Vitrio nasceu para reunir os melhores achados da internet em um só lugar,
+            com curadoria, preço justo e ofertas que realmente fazem sentido para você.
           </p>
         </div>
 
@@ -62,22 +60,22 @@ function AboutPage() {
             {
               icon: ShoppingBag,
               t: "Produtos selecionados",
-              d: "Curadoria diária, sem enrolação.",
+              d: "Achados separados para você encontrar mais rápido.",
             },
             {
               icon: ShieldCheck,
               t: "Confiança e qualidade",
-              d: "Só vendedores testados e aprovados.",
+              d: "Só produtos e vendedores com boa reputação e segurança.",
             },
             {
               icon: Tag,
               t: "Preços que valem",
-              d: "Comparamos ofertas para você economizar de verdade.",
+              d: "Comparamos preços e descontos para você economizar de verdade.",
             },
             {
               icon: Star,
               t: "Indicações que fazem a diferença",
-              d: "Achados que a gente também compraria.",
+              d: "Ofertas que a gente também toparia levar para casa.",
             },
           ].map((v) => (
             <div
@@ -97,10 +95,10 @@ function AboutPage() {
 
         <div className="mt-14 rounded-3xl gradient-dark p-8 text-center text-white sm:p-12">
           <h2 className="text-2xl font-extrabold sm:text-3xl">
-            Vamos conversar?
+            Entre na nossa comunidade no WhatsApp
           </h2>
           <p className="mt-3 text-white/70">
-            Sugestões, parcerias ou dúvidas — estamos aqui para você.
+            Receba novidades, promoções e novos achados direto no seu celular.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <a
