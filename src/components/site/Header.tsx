@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, X, Instagram } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/vitrio-logo.jpeg";
+import logoAsset from "@/assets/vitrio-logo.asset.json";
+const logo = logoAsset.url;
 import { categories, INSTAGRAM_URL } from "@/lib/products";
 
 export function Header() {

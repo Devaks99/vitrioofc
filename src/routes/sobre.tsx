@@ -11,7 +11,8 @@ import {
   Instagram,
 } from "lucide-react";
 import { INSTAGRAM_URL, waLink } from "@/lib/products";
-import logo from "@/assets/vitrio-logo.jpeg";
+import logoAsset from "@/assets/vitrio-logo.asset.json";
+const logo = logoAsset.url;
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MessageCircle, Mail } from "lucide-react";
-import logo from "@/assets/vitrio-logo.jpeg";
+import logoAsset from "@/assets/vitrio-logo.asset.json";
+const logo = logoAsset.url;
 import { categories, waLink, INSTAGRAM_URL } from "@/lib/products";
 
 export function Footer() {
