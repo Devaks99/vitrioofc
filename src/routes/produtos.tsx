@@ -61,7 +61,7 @@ function ProdutosPage() {
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() =>
-                navigate({ search: (prev) => ({ ...prev, cat: undefined }) })
+                navigate({ search: (prev: { cat?: string; q?: string }) => ({ ...prev, cat: undefined }) })
               }
               className={
                 "rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors " +
@@ -76,7 +76,7 @@ function ProdutosPage() {
               <button
                 key={c.slug}
                 onClick={() =>
-                  navigate({ search: (prev) => ({ ...prev, cat: c.slug }) })
+                  navigate({ search: (prev: { cat?: string; q?: string }) => ({ ...prev, cat: c.slug }) })
                 }
                 className={
                   "rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors " +
@@ -97,7 +97,7 @@ function ProdutosPage() {
             onChange={(e) => {
               const v = e.target.value;
               navigate({
-                search: (prev) => ({ ...prev, q: v || undefined }),
+                search: (prev: { cat?: string; q?: string }) => ({ ...prev, q: v || undefined }),
                 replace: true,
               });
             }}
