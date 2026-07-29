@@ -13,7 +13,7 @@ import appCss from "../styles.css?url";
 import logoFavicon from "../assets/logo-vitrio.jpeg?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
-function NotFoundComponent() {
+function NotFoundComponent() {}
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
@@ -82,7 +82,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Vitrio" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Vitrio" },
+      { property: "og:image", content: logoFavicon },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: logoFavicon },
+      { name: "twitter:image:alt", content: "Vitrio logo" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

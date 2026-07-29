@@ -26,6 +26,7 @@ import {
   waLink,
 } from "@/lib/products";
 import heroImg from "@/assets/hero-products.jpg";
+import shareImage from "@/assets/logo-vitrio.jpeg?url";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Cpu, Home: HomeIcon, Car, Wrench, Flame, Star,
@@ -41,6 +42,8 @@ export const Route = createFileRoute("/")({
           "Vitrio é a sua vitrine dos melhores achados da internet. Os produtos com os melhores custos benefícios do mercado em um só lugar!",
       },
       { property: "og:title", content: "Vitrio — Os melhores achados da internet" },
+      { property: "og:image", content: shareImage },
+      { name: "twitter:image", content: shareImage },
       {
         property: "og:description",
         content:
