@@ -3,7 +3,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { ProductCard } from "@/components/site/ProductCard";
-import { getByCategory, getCategory } from "@/lib/products";
+import { getByCategory, getCategory, type Product } from "@/lib/products";
 import { ChevronRight } from "lucide-react";
 
 export const Route = createFileRoute("/categoria/$slug")({
@@ -59,7 +59,7 @@ function CategoryPage() {
           </p>
         ) : (
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-            {list.map((p) => (
+            {list.map((p: Product) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
