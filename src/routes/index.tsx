@@ -34,7 +34,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vitrio — Os melhores achados da internet" },
+      { title: "Vitrio - ofertas imperdíveis" },
       {
         name: "description",
         content:
@@ -77,7 +77,7 @@ function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 pt-14 pb-16 sm:px-6 md:grid-cols-2 md:items-center md:pt-20 md:pb-24 lg:px-8">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-              <Sparkles className="h-3.5 w-3.5" /> Curadoria diária
+              <Sparkles className="h-3.5 w-3.5" /> Vitrine Online
             </span>
             <h1 className="mt-5 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
               Os melhores <span className="text-primary">achados</span>
